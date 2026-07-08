@@ -187,7 +187,7 @@ yearElements.forEach(element => {
     element.innerHTML =
         "© " +
         new Date().getFullYear() +
-        " Silver Studios";
+        " Jake Silver";
 
 
 });
