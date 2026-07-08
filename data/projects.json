@@ -1,0 +1,66 @@
+{
+    "projects": [
+
+        {
+            "category": "Games",
+            "title": "Fantasy RPG",
+            "image": "images/showcase/game1.jpg",
+            "description": "A story-driven fantasy RPG featuring exploration, combat and handcrafted environments.",
+            "link": "#"
+        },
+
+        {
+            "category": "Games",
+            "title": "Prototype Project",
+            "image": "images/showcase/game2.jpg",
+            "description": "A gameplay prototype showcasing procedural generation and AI systems.",
+            "link": "#"
+        },
+
+
+        {
+            "category": "Programming",
+            "title": "Lua Framework",
+            "image": "images/showcase/code1.jpg",
+            "description": "A lightweight framework designed for reusable gameplay systems.",
+            "link": "https://github.com/"
+        },
+
+
+        {
+            "category": "Programming",
+            "title": "Editor Tools",
+            "image": "images/showcase/code2.jpg",
+            "description": "Development utilities designed to improve workflow.",
+            "link": "#"
+        },
+
+
+        {
+            "category": "3D Models",
+            "title": "Medieval Sword",
+            "image": "images/showcase/model1.jpg",
+            "description": "Game-ready sword asset with PBR materials.",
+            "link": "#"
+        },
+
+
+        {
+            "category": "3D Models",
+            "title": "Village House",
+            "image": "images/showcase/model2.jpg",
+            "description": "Optimised environment asset for game engines.",
+            "link": "#"
+        },
+
+
+        {
+            "category": "Artwork",
+            "title": "Concept Art",
+            "image": "images/showcase/art1.jpg",
+            "description": "Character and environment concept artwork.",
+            "link": "#"
+        }
+
+    ]
+}
