@@ -8,6 +8,14 @@
             "description": "A working prototype of a sculpting tool within Roblox.",
             "link": "https://x.com/aridoliss/status/2053224335767404545/"
         },
+
+        {
+            "category": "3D Models",
+            "title": "Knight Armour",
+            "image": "images/showcase/armour.jpg",
+            "description": "A realistic medieval armour set.",
+            "link": "#"
+        }
         
     ]
 }
