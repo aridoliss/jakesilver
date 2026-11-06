@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Jake Silver's website is currently under construction.">
+  <title>Under Construction | Jake Silver</title>
+  <style>
+    :root {
+      --background: #121212;
+      --background-light: #1d1d1d;
+      --card: #242424;
+      --primary: #4da3ff;
+      --primary-hover: #6ab5ff;
+      --text: #fff;
+      --text-light: #cfcfcf;
+      --border: #353535;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(77,163,255,.10), transparent 55%),
+        var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .14;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+      background: rgba(18,18,18,.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      width: min(1200px, 90%);
+      margin: auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--text-light);
+      font-size: .78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+      animation: pulse 1.8s infinite;
+    }
+
+    main {
+      flex: 1;
+      width: min(900px, 90%);
+      margin: auto;
+      padding: 70px 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content { width: 100%; animation: enter .8s ease both; }
+
+    .construction-icon {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(77,163,255,.35);
+      border-radius: 28px;
+      background: linear-gradient(145deg, #242424, #171717);
+      box-shadow: 0 15px 55px rgba(0,0,0,.35), 0 0 35px rgba(77,163,255,.08);
+      color: var(--primary);
+    }
+
+    .construction-icon svg {
+      width: 58px;
+      height: 58px;
+      animation: gentle-float 4s ease-in-out infinite;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.4rem);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    h1 span { color: var(--primary); }
+
+    .description {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-light);
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+    }
+
+    .progress-wrap {
+      width: min(420px, 100%);
+      margin: 38px auto 12px;
+      text-align: left;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: #a9a9a9;
+      font-size: .75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .progress-track {
+      height: 6px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: #2b2b2b;
+      border: 1px solid #353535;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #3188e8, #78bdff);
+      box-shadow: 0 0 16px rgba(77,163,255,.45);
+      animation:
+        progress-cycle 3s linear infinite,
+        progress-glow 1.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes progress-cycle {
+      0% {
+        width: 0;
+      }
+
+      37.5% {
+        width: 68%;
+      }
+
+      100% {
+        width: 68%;
+      }
+    }
+
+    .progress-note {
+      color: #777;
+      font-size: .78rem;
+      margin-top: 12px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: .92rem;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: #081522;
+      border-color: var(--primary);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    .button.primary:hover { background: var(--primary-hover); }
+
+    .button svg { width: 17px; height: 17px; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 22px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: var(--background-light);
+      color: #858585;
+      font-size: .82rem;
+    }
+
+    footer span { color: var(--text-light); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .45; transform: scale(.78); }
+    }
+
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes progress-glow {
+      from { filter: brightness(.9); }
+      to { filter: brightness(1.2); }
+    }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .navbar { width: 92%; }
+      .logo { font-size: 1.1rem; }
+      .status { font-size: .65rem; letter-spacing: 1px; }
+      main { padding: 55px 0; }
+      h1 { letter-spacing: -1.5px; }
+      .construction-icon { width: 92px; height: 92px; border-radius: 23px; }
+      .construction-icon svg { width: 48px; height: 48px; }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="logo">Jake Silver</div>
+      <div class="status"><span class="status-dot" aria-hidden="true"></span> Website in progress</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content" aria-labelledby="page-title">
+      <div class="construction-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 7L59 54H5L32 7Z" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M32 23V37" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="32" cy="45" r="2.5" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <p class="eyebrow">Something new is taking shape</p>
+      <h1 id="page-title">Under <span>Construction.</span></h1>
+      <p class="description">
+        I'm currently rebuilding this space to bring you a better experience.
+        Games, software, and creative projects are getting a fresh home.
+        Check back soon.
+      </p>
+
+      <div class="progress-wrap" aria-label="Development progress">
+        <div class="progress-label">
+          <span>Development progress</span>
+          <span>In progress</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Website development progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68">
+          <div class="progress-bar"></div>
+        </div>
+        <p class="progress-note">Building things properly takes a little time.</p>
+      </div>
+
+
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> <span>Jake Silver</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
